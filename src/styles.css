@@ -1,0 +1,347 @@
+/* Credits to Hieu Trung Nguyen's submission for most of the layout and styling in this project */
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+img {
+  border: none;
+}
+
+/* start header css */
+
+header {
+  background: #171a21;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+  padding: 1em 0.5em;
+  margin-bottom: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+}
+
+/* end header css */
+/* start body css */
+
+body {
+  font-family: sans-serif;
+  color: #c6d4df;
+  background: url("/public/images/v6/colored_body_top.png?v=2") center top
+    no-repeat #1b2838;
+  display: flex;
+  flex-flow: column wrap;
+  position: relative;
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.search-area {
+  max-width: 210px;
+}
+
+.search-box {
+  background-image: none;
+  background-color: #316282;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 0px rgb(255 255 255 / 20%);
+  color: #fff;
+  margin-bottom: 0px;
+  outline: none;
+  height: 27px;
+  padding: 0px 6px;
+  position: relative;
+
+  margin-top: 5px;
+}
+
+.search-box #search-form {
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+  width: calc(100% - 25px - 8px);
+  outline: none;
+  line-height: 26px;
+
+  color: #ebeef0;
+  font-size: 15px;
+  margin-top: 1px;
+  text-shadow: 1px 1px 0px rgb(255 255 255 / 10%);
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 300;
+}
+
+.search-icon img {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  right: 0;
+  background-image: url(https://store.cloudflare.steamstatic.com/public/images/v6/search_icon_btn.png);
+}
+
+.search-icon img:hover {
+  filter: brightness(150%);
+  cursor: pointer;
+}
+
+.genre ul {
+  color: #66c0f4;
+  list-style-type: none;
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 2px solid #316282;
+  cursor: pointer;
+}
+.genre ul li {
+  padding-bottom: 0.5em;
+}
+
+.genre li:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* game card wrapper css */
+.game-content-area {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+  min-height: 400px;
+}
+
+.current-list-header {
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 5px 0 5px 5px;
+  letter-spacing: 0.03em;
+  font-weight: normal;
+  padding-top: 2px;
+}
+
+.game-area {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-content: flex-start;
+}
+
+.game-area .game-wrapper {
+  width: 270px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  border-radius: 10px;
+  flex-basis: 0 0 25%;
+}
+
+.game-area .game-wrapper .game-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-area .game-wrapper .game-cover:hover {
+  filter: brightness(125%);
+  cursor: pointer;
+}
+
+.game-area .game-wrapper .game-cover img {
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.game-area .game-wrapper .game-info {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Motiva Sans", Sans-serif;
+  font-size: 1.2em;
+  background: linear-gradient(
+    -45deg,
+    rgba(64, 121, 153, 1) 5%,
+    rgba(42, 62, 89, 1) 95%
+  );
+  height: 45px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.game-area .game-wrapper .game-info p {
+  padding: 5px;
+  color: #acdbf5;
+}
+
+/* start css for detail page */
+.game-details-area .game-title {
+  color: white;
+  font-family: Motiva Sans, Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  line-height: 32px;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  padding: 0;
+}
+
+.game-details-area .game-price {
+  color: #acdbf5;
+  padding: 0 6px;
+  display: inline-block;
+  padding: 0 3px;
+  line-height: 17px;
+}
+
+.game-details-area .game-details {
+  display: flex;
+  background-position: bottom;
+  padding-bottom: 1px;
+  margin: 0px auto;
+  padding: 16px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.game-details-area .details .description {
+  max-height: 120px;
+  max-width: 400px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 15px;
+  padding: 0 16px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.game-details-area .details .extra-info {
+  font-size: 12px;
+  padding: 16px;
+  min-width: 94px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #66c0f4;
+  line-height: 20px;
+}
+
+.game-details-area .game-tags {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  font-size: 12px;
+  padding: 16px;
+}
+
+.game-details-area .game-tags .tags {
+  display: flex;
+}
+
+.game-details-area .game-tags .tags .tag {
+  display: inline-block;
+  line-height: 19px;
+  padding: 0 7px;
+  color: #67c1f5;
+  background-color: rgba(103, 193, 245, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 4px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #67c1f5;
+}
+
+.game-details-area .game-tags .tags .tag:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+/* end css for detail page */
+
+/* loader UI component and animation. */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #155580c9;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  top: 30%;
+  padding: 20px;
+  left: 0px;
+  right: 0px;
+  margin: 10px auto;
+
+  position: absolute;
+  /* z-index: 999; */
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* end body css */
+/* start footer css */
+
+footer {
+  background: #171a21;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+  padding: 1em 0.5em;
+  margin-bottom: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+}
+
+/* end footer css */
+
+.hidden {
+  display: none;
+}
