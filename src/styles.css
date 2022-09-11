@@ -39,7 +39,7 @@ header {
 body {
   font-family: sans-serif;
   color: #c6d4df;
-  background: url("/public/images/v6/colored_body_top.png?v=2") center top
+  background: url("https://store.cloudflare.steamstatic.com/public/images/v6/colored_body_top.png?v=2") center top
     no-repeat #1b2838;
   display: flex;
   flex-flow: column wrap;
